@@ -10,7 +10,10 @@ class BreedButton extends Component {
   render() { 
     return ( 
       <div>
-          <button type="button" onClick={this.state.onClick} className="btn btn-primary">Back to Breed List</button>
+      <Link to="/breeds">
+          <button type="button" onClick={this.state.onClick} className="btn btn-primary">To Breed List</button>
+          
+          </Link>
           </div>
      );
   }
