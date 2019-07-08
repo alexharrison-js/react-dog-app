@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import calls from '../../api/calls.js';
+import BreedName from '../BreedName';
+import DogCard from '../DogCard';
 
 var temp = {
   "message": {
@@ -190,33 +192,72 @@ var temp = {
   },
   "status": "success"
 };
-var arr = {}; //to be replaced with live data
-
-
+var arr = temp.message; //to be replaced with live data
+var breedsAfterCall = []; //holds a list of breeds AND subBreeds
+        for (var item in arr) {
+            breedsAfterCall.push(item);
+        }
+console.log(breedsAfterCall);
 class Breeds extends Component {
   state = { 
-    breeds: arr
+    breeds: breedsAfterCall
    }
+   
 
    componentDidMount = () => (
-    calls.getBreeds().then(
-        (data) => (
-        arr = (data.data.message),
+    calls.getBreeds().then((data) => (arr = data.data.message)).then(
         this.setState({
-            breeds: arr
-        })
-        )
-        ).then(()=>(console.log(arr))
-    ).then(this.setState({
+            breeds: breedsAfterCall
 
-    }))
+        })
+        ).then(()=>(console.log("working"))
+    )
 )
 
 
 //on click of the Breed this should reroute to a card of the breed taking the props
 render(){  
+    var rendering = []; //holds the actual component to be rendered card or breed
+        
+        // console.log(breedsAfterCall);
+    for (let i = 0; i < breedsAfterCall.length; i++) {
+        var currentDog = breedsAfterCall[i];
+        var subBreedDogs = arr[currentDog]; 
+        //call getBreedPics and pass in to breed comp
+        if (subBreedDogs.length === 0) {
+            rendering.push(
+                <BreedName
+                    value={currentDog}
+                    parentBreed={"none"}
+                    clicked="false"
+                    imgurl=""
+                    imgList=""
+                />
+                )
+
+        } else {
+            //call getSubBreedPics and pass in to breed component
+            var subBreedHolder;
+            for (let i = 0; i < subBreedDogs.length; i++) {
+                subBreedHolder = subBreedDogs[i];
+                rendering.push(
+                
+                <BreedName
+                    value={subBreedHolder}
+                    parentBreed={currentDog}
+                    imgurl=""
+                    clicked="false"
+                />
+                
+                )
+            }
+        };
+    
+}
 return (
-  <p>THIS IS THE LIST OF BREEEDS!! WOOO</p>
+  <div>
+      {rendering}
+  </div>
     );
 }
 }

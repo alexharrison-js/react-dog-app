@@ -24,15 +24,14 @@ function App() {
           <div>
           <Route exact path="/" component={BreedButton} />
           <Route exact path="/breeds" component={Breeds} />
-          <Route exact path="/breeds/{breedName}" component={DogCard} />
+          <Route exact path="/breedcard" component={DogCard} />
           <Route exact path="/search" component={Search} />
-          
           </div> 
           </Router>
-       
       </header>
     </div>
   );
 }
+//breedcard component should load the card of the selected dog
 //GOTTA MAKE THAT BUTTON POINT TO BREEDLIST PAGE!
 export default App;

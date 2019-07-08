@@ -32,3 +32,8 @@
     transform: rotate(360deg);
   }
 }
+
+.dogpic{
+  height: 50vh;
+  width: auto;
+}
