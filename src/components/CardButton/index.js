@@ -18,19 +18,11 @@ class CardButton extends Component {
 
     }
     handleData = (data) => (data = data.data.message,
-        // data = JSON.parse(JSON.stringify(data)),
-        // console.log(data),
-        // I think it's from JSON.stringify adding the escape characters
-        //
-        // the imgurl (and all urls for that matter) are returned in an odd format
-        // 
         this.setState({
             imgList: data,
             imgurl: data[this.state.currIndex],
             currIndex: (this.state.currIndex + 1)
-        }),
-        console.log("clicked or not:  " + this.state.clicked),
-        console.log("here is imgurl: " + this.state.imgurl)
+        })
     )
     componentWillMount = () => {
         (this.state.parentBreed === "none") ?
@@ -41,20 +33,14 @@ class CardButton extends Component {
         console.log("clicked on the back to breeds button"),
         this.state.clicked === false ?
             this.setState({ clicked: true }) :
-            this.setState({ clicked: false }),
-        console.log("clicked or not: " + this.state.clicked)
-        //not logging
-
+            this.setState({ clicked: false })
     )
     newpic = () => (
         this.setState({
             imgurl: this.state.imgList[this.state.currIndex],
             currIndex: (this.state.currIndex + 1)
-        }),
-        console.log("newpic clicked")
-        //passed down and bubbles up event to parret component where it is console.logged
+        })
     )
-    //onStateChange
     render() {
 
 

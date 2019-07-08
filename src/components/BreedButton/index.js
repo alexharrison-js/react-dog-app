@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-
+//landing page button (to show the list of breeds initally and to get back there)
 
 class BreedButton extends Component {
   state = { 
@@ -10,7 +10,7 @@ class BreedButton extends Component {
   render() { 
     return ( 
       <div>
-          <button type="button" onClick={this.state.onClick} className="btn btn-info">Breed List</button>
+          <button type="button" onClick={this.state.onClick} className="btn btn-primary">Back to Breed List</button>
           </div>
      );
   }

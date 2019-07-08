@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import BreedButton from './components/BreedButton';
-import Search from './components/SearchResults';
 import Breeds from './components/Breeds';
 import DogCard from './components/DogCard'
 
@@ -25,7 +24,6 @@ function App() {
           <Route exact path="/" component={BreedButton} />
           <Route exact path="/breeds" component={Breeds} />
           <Route exact path="/breedcard" component={DogCard} />
-          <Route exact path="/search" component={Search} />
           </div> 
           </Router>
       </header>

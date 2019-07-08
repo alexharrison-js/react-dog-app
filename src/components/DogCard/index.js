@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import BreedButton from '../BreedButton';
 import NewPicButton from '../NewPicButton';//return new pic
 
-//dogCard replaces Card
-//needs a button for new pic and a button for back to Breeds
 class DogCard extends Component {
     state = {
         breed: this.props.breed,
@@ -17,8 +14,7 @@ class DogCard extends Component {
         this.setState({
             imgurl: this.state.imgList[this.state.currIndex],
             currIndex: (this.state.currIndex + 1)
-        }),
-            console.log("imageurl: " + this.state.imgurl)
+        })
 
     )
 
