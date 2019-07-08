@@ -2,6 +2,7 @@ This is a Dog Picture finding React.js App
 
 Here is a link to the deployed app on heroku:
 
+[https://calm-sierra-93040.herokuapp.com/breeds](https://calm-sierra-93040.herokuapp.com/breeds)
 
 
 This app allows you to:  
