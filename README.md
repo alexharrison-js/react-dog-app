@@ -23,3 +23,7 @@ I used a bit of react router for this, as well as bootstrap for simplifying the 
 
 
 Thanks for checking it out!
+
+![App Screenshot 1](./appscreenshot1.png?raw=true "Landing Page")
+![App Screenshot 1](./appscreenshot2.png?raw=true "Breeds List")
+![App Screenshot 1](./appscreenshot3.png?raw=true "Breed Card")
