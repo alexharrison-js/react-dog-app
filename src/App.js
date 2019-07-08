@@ -1,27 +1,38 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Discover from "./pages/Discover";
-import About from "./pages/About";
-import Search from "./pages/Search";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper";
+import './App.css';
+import BreedButton from './components/BreedButton';
+import Search from './components/SearchResults';
+import Breeds from './components/Breeds';
+import DogCard from './components/DogCard'
+
+
+
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navbar />
-        <Wrapper>
-          <Route exact path="/" component={About} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/discover" component={Discover} />
+    <div className="App">
+      <header className="App-header">
+        <img src="https://cdn.pixabay.com/photo/2015/02/12/17/52/canine-634020_1280.jpg" className="App-logo" alt="logo" />
+        <br />
+        <br />
+
+        <p>
+          I love dogs ... You love dogs ... 
+          </p>
+          <Router>
+          <div>
+          <Route exact path="/" component={BreedButton} />
+          <Route exact path="/breeds" component={Breeds} />
+          <Route exact path="/breeds/{breedName}" component={DogCard} />
           <Route exact path="/search" component={Search} />
-        </Wrapper>
-        <Footer />
-      </div>
-    </Router>
+          
+          </div> 
+          </Router>
+       
+      </header>
+    </div>
   );
 }
-
+//GOTTA MAKE THAT BUTTON POINT TO BREEDLIST PAGE!
 export default App;
