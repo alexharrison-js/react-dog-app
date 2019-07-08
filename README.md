@@ -1,5 +1,9 @@
 This is a Dog Picture finding React.js App
 
+Here is a link to the deployed app on heroku:
+
+
+
 This app allows you to:  
 
 1. View a list of dog breeds
@@ -14,5 +18,7 @@ Design choices in this:
 - it updates the list of breeds and images etc with fresh data from the api so that you always get the hottest pics of dogs!
     
 I used a bit of react router for this, as well as bootstrap for simplifying the UI.
+
+
 
 Thanks for checking it out!
